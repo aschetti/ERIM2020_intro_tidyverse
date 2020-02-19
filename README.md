@@ -10,7 +10,7 @@ Broadly defined, Open Science aims to make the products of scholarly investigati
 * Unzip the folder somewhere on your hard disk
 * Double-click on _**ERIM2020_intro_tidyverse.Rproj**_ to open the self-contained RStudio project
 * From the _Files_ panel in RStudio, click on _**ERIM2020_intro_tidyverse.Rmd**_ (in the _doc_ subfolder) for the code we will discuss during the workshop
-* In the same subfolder you will also find the complete output (_**ERIM2020_intro_tidyverse.html**_) as well as the source code (_**ERIM2020_intro_tidyverse_exercises_solutions.Rmd**_) and solutions (_**ERIM2020_intro_tidyverse_exercises_solutions.html**_) to the exercises
+* In the same subfolder you will also find the [complete output](https://github.com/aschetti/ERIM2020_intro_tidyverse/blob/master/doc/ERIM2020_intro_tidyverse.html) as well as the solutions to the exercises ([source](https://github.com/aschetti/ERIM2020_intro_tidyverse/blob/master/doc/ERIM2020_intro_tidyverse_exercises_solutions.Rmd), [html](https://github.com/aschetti/ERIM2020_intro_tidyverse/blob/master/doc/ERIM2020_intro_tidyverse_exercises_solutions.html))
 
 ***
 
