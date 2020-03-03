@@ -166,7 +166,14 @@ To see the full data set, click on ```att``` in the *Environment* window (by def
 
 These are the data of `r length(unique(att$ssj))` participants who saw **neutral**, **positive**, or **negative** advertisement of **beer**, **wine**, and **water** in 3 separate sessions. They were asked to rate the drinks on a scale ranging from –100 (*dislike very much*) through 0 (*neutral*) to +100 (*like very much*). Researchers wanted to reduce binge drinking in teenagers, so they hoped that pairing negative imagery with alcoholic beverages would lower these ratings[^5].
 
-When the data set is big, it is useful to have a general idea of what it contains (**tip**: use the function ```glimpse```).
+When the data set is big, it is useful to have a general idea of what it contains (**tip**: use the function ```glimpse```):
+
+```{r glimpse_data}
+
+glimpse(att)
+
+```
+
 
 ## Filtering
 
