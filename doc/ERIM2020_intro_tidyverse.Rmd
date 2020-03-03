@@ -3,15 +3,14 @@ title: '<center> <h1> Reproducible data analysis using R and the ```tidyverse```
 author: '[Antonio Schettino](https://asch3tti.netlify.com/ "Antonio Schettino")'
 date: 'March 4th, 2020'
 output:
-  html_document:
-    df_print: paged
-    theme: spacelab
-    highlight: tango
+  html_document: 
     code_folding: show
-    toc: true
-    toc_float: true
+    highlight: zenburn
     includes:
       after_body: footer.html
+    theme: flatly
+    toc: yes
+    toc_float: yes
 editor_options: 
   chunk_output_type: console
 ---
@@ -164,7 +163,7 @@ att
 
 To see the full data set, click on ```att``` in the *Environment* window (by default on the upper right corner).
 
-These are the data of `r length(unique(att$ssj))` participants who saw **neutral**, **positive**, or **negative** advertisement of **beer**, **wine**, and **water** in 3 separate sessions. They were asked to rate the drinks on a scale ranging from –100 (*dislike very much*) through 0 (*neutral*) to +100 (*like very much*). Researchers wanted to reduce binge drinking in teenagers, so they hoped that pairing negative imagery with alcoholic beverages would lower these ratings[^5].
+These are the data of `r length(unique(att$ssj))` teenagers who saw **neutral**, **positive**, or **negative** advertisement of **beer**, **wine**, and **water** in 3 separate sessions. They were asked to rate the drinks on a scale ranging from –100 (*dislike very much*) through 0 (*neutral*) to +100 (*like very much*). Researchers wanted to reduce binge drinking in teenagers, so they hoped that pairing negative imagery with alcoholic beverages would lower these ratings[^5].
 
 When the data set is big, it is useful to have a general idea of what it contains (**tip**: use the function ```glimpse```):
 
@@ -255,9 +254,7 @@ att_filter %>%
 
 ## Variable selection
 
-For today's exercises, we will only need a subset of variables in this data set.   
-   
-Researchers were interested in *reducing* binge drinking, so we will focus our attention on **negative** imagery and one alcoholic beverage. We choose **beer**. We also need control conditions, i.e., **neutral** imagery and **water**.
+We only need a subset of variables in this data set. Researchers were interested in *reducing* binge drinking, so we will focus our attention on **negative** imagery and one alcoholic beverage. We choose **beer**. We also need control conditions, i.e., **neutral** imagery and **water**.
 
 In the next code snippet, we simultaneously **select** and **rename** the variables we want to keep.
 
@@ -646,7 +643,7 @@ summary_att_filter_select_recode_long_sep_onego %>%
 
 ```
 
-These colors are terrible... let's use a more decent color palette. The package ```viridis``` uses colors that are easier to distinguish for people with colorblindness.
+These colors are terrible... let's use a better-looking color palette. The package ```viridis``` uses colors that are easier to distinguish for people with colorblindness.
 
 ```{r install_viridis, eval = FALSE}
 
@@ -746,7 +743,7 @@ summary_att_filter_select_recode_long_sep_onego %>%
 No matter how pretty a bar graph is, it remains a suboptimal way of displaying your data.   
 A better solution is to use **RDI** plots.
 
-RDI plots display **R**aw data, **D**escriptives, and **I**nferential statistics altogether. Nothing is hidden by useless bars, everything is shown so that readers can make up their minds. For example, the violin plot[^6] below shows:
+RDI plots display **R**aw data, **D**escriptives, and **I**nferential statistics altogether. Nothing is hidden by useless bars, everything is shown so that readers can make up their minds. For example, the plot[^6] below shows:
 
 * points: individual data
 * vertical bars: means
@@ -1042,7 +1039,7 @@ att_HedgesG <-
     "Hedges_g" = statistic,
     "CI95_low" = conf.low,
     "CI95_high" = conf.high,
-    bias,
+    "bias",
     "std_error" = std.error
   ) %>%
   print()
@@ -1135,7 +1132,7 @@ However, I said *facilitate* for a reason: even using this workflow, computation
 
 There are ways to (almost) ensure computational reproducibility. The best option I have found so far is to create an R package with data, preprocessing and analysis scripts, and files that document the specific version of each package used for the computations. This package can be embedded into a **container**, a sort of virtual machine that contains an operating system with its own software, libraries, and configuration files. Learning these skills require some time but, in my opinion, it's worth the time and effort. If you are interested, check out [**```rrtools```**](https://github.com/benmarwick/rrtools).
 
-Another good (and low-effort `r emo::ji("smile")`) option is to use the function ```sessonInfo```, which lists important information related to your operating system and libraries as well as R and package versions.
+Another good (and low-effort `r emo::ji("smile")`) option is to use the function ```sessionInfo```, which lists important information related to your operating system and libraries as well as R and package versions.
 
 ```{r session_info}
 
