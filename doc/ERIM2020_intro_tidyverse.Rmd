@@ -350,7 +350,7 @@ att_filter_select_recode_long <-
   pivot_longer(
     cols = c(beer_negative, beer_neutral, water_negative, water_neutral), # variables to be stacked
     names_to = "condition", # name of new variable with all condition levels
-    values_to = "ratings", # name of new variable with all values
+    values_to = "ratings" # name of new variable with all values
   )
 
 head(att_filter_select_recode_long, n = 5)
